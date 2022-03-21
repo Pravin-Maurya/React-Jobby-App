@@ -17,21 +17,23 @@ const Header = props => {
   return (
     <nav className="nav-header">
       <div className="logo-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-          alt="website logo"
-          className="web-logo"
-        />
-        <p className="logo-name">Jobby</p>
+        <Link to="/" className="logo-img">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+            className="web-logo"
+          />
+        </Link>
       </div>
       <div className="desktop-menu-item">
-        <ul className="menu-item">
-          <li className="menu-item">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/jobs">Jobs</Link>
-          </li>
+        <ul className="header-menu-item">
+          <Link to="/" className="link-item">
+            <li className="menu-item">Home</li>
+          </Link>
+
+          <Link to="/jobs" className="link-item">
+            <li className="menu-item">Jobs</li>
+          </Link>
         </ul>
         <button type="button" className="logout-btn" onClick={onClickLogout}>
           Logout
@@ -39,19 +41,24 @@ const Header = props => {
       </div>
       <div className="mobile-menu-item">
         <ul className="logo-menu-items">
-          <li className="mobile-nav-item">
-            <Link to="/">
-              <AiFillHome className="home-icon" />
-            </Link>
-          </li>
-          <li className="mobile-nav-item">
-            <Link to="/jobs">
-              <BsBriefcaseFill className="job-icon" />
-            </Link>
-          </li>
+          <Link to="/" className="link-item">
+            <li className="mobile-nav-item">
+              <AiFillHome className="icons" />
+            </li>
+          </Link>
+
+          <Link to="/jobs" className="link-item">
+            <li className="mobile-nav-item">
+              <BsBriefcaseFill className="icons" />
+            </li>
+          </Link>
         </ul>
-        <button type="button">
-          <FiLogOut className="logout-icon" />
+        <button
+          type="button"
+          className="logout-mobile-btn"
+          onClick={onClickLogout}
+        >
+          <FiLogOut className="icons" />
         </button>
       </div>
     </nav>
